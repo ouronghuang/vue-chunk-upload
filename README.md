@@ -3,14 +3,14 @@
 </h1>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@orh/vue-markdown-editor">
-        <img alt="npm" src="https://img.shields.io/npm/v/@orh/vue-markdown-editor?color=ea2039">
+    <a href="https://www.npmjs.com/package/@orh/laravel-chunk-upload">
+        <img alt="npm" src="https://img.shields.io/npm/v/@orh/laravel-chunk-upload?color=ea2039">
     </a>
-    <a href="https://www.npmjs.com/package/@orh/vue-markdown-editor">
-        <img alt="npm" src="https://img.shields.io/npm/dt/@orh/vue-markdown-editor?color=ea2039">
+    <a href="https://www.npmjs.com/package/@orh/laravel-chunk-upload">
+        <img alt="npm" src="https://img.shields.io/npm/dt/@orh/laravel-chunk-upload?color=ea2039">
     </a>
-    <a href="https://github.com/ouronghuang/vue-markdown-editor">
-        <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/vue-markdown-editor">
+    <a href="https://github.com/ouronghuang/laravel-chunk-upload">
+        <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/laravel-chunk-upload">
     </a>
 </p>
 
