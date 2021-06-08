@@ -50,16 +50,29 @@ export default {
     },
     configs: {
       type: Object,
-      default: () => {
+      default() {
         return {};
+      }
+    },
+    allowSize: {
+      type: Number,
+      default: 0
+    },
+    allowExtensions: {
+      type: Array,
+      default() {
+        return [];
       }
     },
     fields: {
       type: Object,
-      default: () => {
+      default() {
         return {
           filename: 'filename',
-          size: 'size'
+          size: 'size',
+          total: 'total',
+          index: 'index',
+          file: 'file'
         };
       }
     }
@@ -107,11 +120,25 @@ export default {
       this.file = file[0];
       this.$refs.file.value = null;
 
+      if (this.allowSize && this.file.size > this.allowSize) {
+        return this.$emit('invalid-size', '文件过大');
+      }
+
+      if (this.allowExtensions.length) {
+        const index = this.file.name.lastIndexOf('.');
+        const extension = this.file.name.substring(index + 1);
+
+        if (this.allowExtensions.indexOf(extension) === -1) {
+          return this.$emit('invalid-extension', '不支持的文件类型');
+        }
+      }
+
+
       this.handlePreprocess();
     },
     handlePreprocess() {
       this.requestProgress = 0;
-      this.msg = '预处理中...';
+      this.msg = '正在准备...';
       this.uploading = true;
       let form = {};
       form[this.fields.filename] = this.file.name;
@@ -122,6 +149,7 @@ export default {
         this.chunk.extension = data.extension;
         this.chunk.size = data.size;
         this.chunk.total = Math.ceil(this.file.size / this.chunk.size);
+        this.msg = '正在上传...';
         this.handleUpload();
       });
     },
@@ -131,19 +159,17 @@ export default {
       const start = this.chunk.index * this.chunk.size;
       const end = Math.min(this.file.size, start + this.chunk.size);
       this.chunk.index++;
-      form.append('file', this.file.slice(start, end), this.file.name);
-      form.append('filename', this.chunk.filename);
-      form.append('total', this.chunk.total);
-      form.append('index', this.chunk.index);
-
-      this.msg = `正在上传 ${this.chunk.index}/${this.chunk.total} ...`;
+      form.append(this.fields.file, this.file.slice(start, end), this.file.name);
+      form.append(this.fields.filename, this.chunk.filename);
+      form.append(this.fields.total, this.chunk.total);
+      form.append(this.fields.index, this.chunk.index);
 
       this.http.post(this.uploadUrl, form).then(({data}) => {
         this.totalProgress = this.calculateProgress(this.chunk.index / this.chunk.total);
 
         if (data.path) {
           this.$emit('update:modelValue', data.path);
-          this.$emit('completed');
+          this.$emit('completed', data.path);
           this.msg = '上传成功';
         } else {
           this.handleUpload();

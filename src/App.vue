@@ -3,6 +3,11 @@
       v-model="path"
       :preprocess-url="preprocessUrl"
       :upload-url="uploadUrl"
+      :configs="{}"
+      :allow-extensions="['jpg']"
+      :allow-size="10485760"
+      @invalid-size="handleInvalidSize"
+      @invalid-extension="handleInvalidExtension"
       @completed="handleCompleted"
   >
   </vue-chunk-upload>
@@ -14,13 +19,19 @@ export default {
   data() {
     return {
       path: '',
-      preprocessUrl: 'http://vr.test/api/chunk_uploads/preprocess?api_token=zs0daXdncEo7bdIXsgLAYzvbySeufXxY',
-      uploadUrl: 'http://vr.test/api/chunk_uploads/upload?api_token=zs0daXdncEo7bdIXsgLAYzvbySeufXxY'
+      preprocessUrl: '/chunk_uploads/preprocess',
+      uploadUrl: '/chunk_uploads/upload'
     }
   },
   methods: {
-    handleCompleted() {
-      console.log(this.path)
+    handleCompleted(path) {
+      console.log(path)
+    },
+    handleInvalidSize(msg) {
+      console.log(msg);
+    },
+    handleInvalidExtension(msg) {
+      console.log(msg);
     }
   }
 }
