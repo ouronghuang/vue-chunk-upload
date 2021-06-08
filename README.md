@@ -3,21 +3,21 @@
 </h1>
 
 <p align="center">
-    <a href="https://www.npmjs.com/package/@orh/laravel-chunk-upload">
-        <img alt="npm" src="https://img.shields.io/npm/v/@orh/laravel-chunk-upload?color=ea2039">
+    <a href="https://www.npmjs.com/package/@orh/vue-chunk-upload">
+        <img alt="npm" src="https://img.shields.io/npm/v/@orh/vue-chunk-upload?color=ea2039">
     </a>
-    <a href="https://www.npmjs.com/package/@orh/laravel-chunk-upload">
-        <img alt="npm" src="https://img.shields.io/npm/dt/@orh/laravel-chunk-upload?color=ea2039">
+    <a href="https://www.npmjs.com/package/@orh/vue-chunk-upload">
+        <img alt="npm" src="https://img.shields.io/npm/dt/@orh/vue-chunk-upload?color=ea2039">
     </a>
-    <a href="https://github.com/ouronghuang/laravel-chunk-upload">
-        <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/laravel-chunk-upload">
+    <a href="https://github.com/ouronghuang/vue-chunk-upload">
+        <img alt="GitHub" src="https://img.shields.io/github/license/ouronghuang/vue-chunk-upload">
     </a>
 </p>
 
 * 适用于 Vue 3 的分片上传扩展
 * Vue 3.0+
 * Axios+
-* 可以配合 [orh/laravel-chunk-upload](https://github.com/ouronghuang/vue-chunk-upload) 使用
+* 可以配合 [orh/laravel-chunk-upload](https://github.com/ouronghuang/laravel-chunk-upload) 使用
 
 ## Vue 3.x
 
