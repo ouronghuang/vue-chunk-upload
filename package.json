@@ -1,7 +1,15 @@
 {
-  "name": "vue-chunk-upload",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@orh/vue-chunk-upload",
+  "description": "Vue 3 chunk upload",
+  "keywords": [
+    "vue",
+    "vue 3",
+    "chunk-upload",
+    "vue-chunk-upload",
+    "vue-3-chunk-upload"
+  ],
+  "version": "1.0.0",
+  "main": "./src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -41,5 +49,15 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "author": "orh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ouronghuang/vue-chunk-upload"
+  },
+  "bugs": {
+    "url": "https://github.com/ouronghuang/vue-chunk-upload/issues"
+  },
+  "homepage": "https://github.com/ouronghuang/vue-chunk-upload"
 }

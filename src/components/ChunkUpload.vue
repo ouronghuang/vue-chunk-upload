@@ -10,6 +10,7 @@
     <slot
         :requestProgress="requestProgress"
         :totalProgress="totalProgress"
+        :msg="msg"
     >
       <div class="progress">
         <div
@@ -77,7 +78,12 @@ export default {
       }
     }
   },
-  emits: ['update:modelValue'],
+  emits: [
+    'update:modelValue',
+    'invalid-size',
+    'invalid-extension',
+    'completed'
+  ],
   data() {
     return {
       uploading: false,
