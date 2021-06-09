@@ -133,13 +133,12 @@ export default defineComponent({
 
       if (this.allowExtensions.length) {
         const index = this.file.name.lastIndexOf('.');
-        const extension = this.file.name.substring(index + 1);
+        const extension = this.file.name.substring(index + 1).toLowerCase();
 
         if (this.allowExtensions.indexOf(extension) === -1) {
           return this.$emit('invalid-extension', '不支持的文件类型');
         }
       }
-
 
       this.handlePreprocess();
     },
