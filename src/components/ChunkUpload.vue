@@ -33,8 +33,9 @@
 
 <script>
 import axios from 'axios';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   name: 'vue-chunk-upload',
   props: {
     modelValue: {
@@ -186,10 +187,10 @@ export default {
       return Math.round(progress * 10000) / 100;
     }
   }
-}
+});
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $primary: #409eff;
 $warning: #e6a23c;
 
