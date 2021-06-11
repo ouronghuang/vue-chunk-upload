@@ -66,17 +66,9 @@ export default defineComponent({
         return [];
       }
     },
-    fields: {
+    fieldsName: {
       type: Object,
-      default() {
-        return {
-          filename: 'filename',
-          size: 'size',
-          total: 'total',
-          index: 'index',
-          file: 'file'
-        };
-      }
+      default: () => {}
     }
   },
   emits: [
@@ -101,6 +93,16 @@ export default defineComponent({
         size: 0
       }
     }
+  },
+  created() {
+    this.fields = {
+      filename: 'filename',
+      size: 'size',
+      total: 'total',
+      index: 'index',
+      file: 'file',
+      ...this.fieldsName
+    };
   },
   mounted() {
     this.http = axios.create({

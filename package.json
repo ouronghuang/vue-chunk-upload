@@ -8,7 +8,7 @@
     "vue-chunk-upload",
     "vue-3-chunk-upload"
   ],
-  "version": "1.1.1",
+  "version": "1.2.0",
   "main": "./src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -16,8 +16,10 @@
     "lint": "vue-cli-service lint"
   },
   "peerDependencies": {
-    "axios": "^0.21.1",
     "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
